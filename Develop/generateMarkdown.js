@@ -54,10 +54,12 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license === 'No License') {
     return ''
-  }
+  } else {
 
   return `## License
 This project is licensed under the [${license}](${renderLicenseLink(license)}) license.`;
+
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -73,12 +75,17 @@ function generateMarkdown(data) {
   - [License](#license)
   - [Contact](#contact)
   
+  ## Installation
+  ${data.installation}
+
   ## Usage 
   ${data.usage}
+  
   ## Collaborators
   ${data.collaborators}
-  ## License
+
   ${renderLicenseSection(data.license)}
+  
   ## Contact
   ${data.questions}
 `;
